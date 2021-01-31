@@ -1,0 +1,301 @@
+/* ===================================== ALL ===================================== */
+.section_title{
+  position: relative;
+  color: lightseagreen;
+  margin: 2rem 0;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.section_title h2{
+  font-size: 2rem;
+}
+
+.section_title::after{
+  position: absolute;
+  content: "";
+  width: 70px;
+  height: .30rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 3.5rem;
+  background-color: lightsteelblue;
+  margin-bottom: 20px;
+}
+
+/* ===================================== NAVIGATION ===================================== */
+/* ================================ UNIVERSAL ================================ */
+nav {
+    background: lightsteelblue;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 70px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    left: 0;
+    padding: 15px 100px;
+    position: relative;
+    top: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    width: 100%;
+    z-index: 99;
+}
+
+nav.fixed {
+    -webkit-animation: show 0.3s;
+    animation: show 0.3s;
+    position: fixed !important;
+}
+
+/* ======================= ANIMATION ======================= */
+@-webkit-keyframes show {
+  0% {
+    -webkit-transform: translateY(-70px);
+    transform: translateY(-70px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes show {
+  0% {
+    -webkit-transform: translateY(-70px);
+    transform: translateY(-70px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+/* ================================== LOGO ================================== */
+nav .logo {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: grey;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 32px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+nav .logo .logo-icon {
+    height: 40px;
+    margin-left: 70px;
+}
+
+nav .logo .logo-icon img {
+    height: 100%;
+    margin-bottom: 30px;
+    margin-right: 10px;
+}
+
+
+/* ================================ BURGER IC ================================ */
+nav .show {
+  background: gray;
+  cursor: pointer;
+  float: right;
+  height: 5px;
+  position: relative;
+  margin-top: 25px;
+  width: 30px;
+}
+
+nav .show:before,
+nav .show:after {
+  background: gray;
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+}
+
+nav .show:before {
+  top: -12px;
+  width: 100%;
+}
+
+nav .show:after {
+  top: 12px;
+  width: 100%;
+}
+
+nav .show.black,
+nav .show.black:before,
+nav .show.black:after {
+  background: gray;
+}
+
+/* ================================ NAV  ITEM ================================ */
+nav ul,
+nav ul div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+nav ul div li {
+    line-height: 35px;
+    list-style: none;
+    margin-left: 18px;
+}
+
+nav ul div li a {
+    color: teal;
+    display: inline-block;
+    font-size: 18px;
+    font-size: 1.125rem;
+    padding: 0 5px;
+    position: relative;
+    text-decoration: none;
+    text-transform: capitalize;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+nav ul div li a.active {
+    font-weight: 450;
+}
+
+nav ul div li a:hover,
+nav ul div li a.active {
+    color: lightseagreen;
+}
+
+nav ul .hide {
+  font-size: 40px;
+  font-size: 2.5rem;
+}
+
+nav ul .hide.black {
+  color: grey;
+}
+
+/* ================================ HIDE SHOW ================================ */
+nav .show,
+nav ul .hide {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  display: none;
+}
+
+
+/* ===================================== RESPONSIVE ===================================== */
+/* ================================= TABLET ================================= */
+@media screen and (max-width: 768px) {
+  /* ======================= UNIVERSAL ======================= */
+  nav {
+    padding: 10px 50px;
+  }
+
+  /* ========================= LOGO ========================= */
+  nav .logo {
+    line-height: 60px;
+  }
+
+  /* ======================= NAV  ITEM ======================= */
+  nav ul {
+    background: sandybrown;
+    display: block;
+    height: 100vh;
+    line-height: normal;
+    padding: 20px 0;
+    position: fixed;
+    right: -100%;
+    text-align: center;
+    top: 0;
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
+    width: 100%;
+    z-index: 999;
+  }
+
+  nav ul.nav-list {
+    background: sandybrown;
+  }
+
+  nav ul div {
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(-52.5%, -80%);
+    transform: translate(-52.5%, -80%);
+    width: 100%;
+  }
+
+  nav ul div li {
+    margin-top: 10vh;
+  }
+
+  nav ul div li a {
+    font-size: 2rem;
+  }
+
+  nav ul .hide {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+  }
+
+  /* ======================= HIDE SHOW ======================= */
+  nav .show,
+  nav ul .hide {
+    display: block;
+  }
+
+  .section_title{
+    margin-bottom: 3rem;
+}
+
+  .section_title::after{
+      width: 80px;
+      top: 3.5rem;
+  }
+}
+
+/* ================================= MOBILE ================================= */
+@media screen and (max-width: 426px) {
+  /* ======================= UNIVERSAL ======================= */
+  nav {
+    padding: 10px 20px;
+  }
+
+  /* ========================= LOGO ========================= */
+  nav .logo {
+    font-size: 1.5rem;
+  }
+
+  /* ======================= BURGER IC ======================= */
+  nav .show {
+    height: 3px;
+  }
+
+  nav .show:before {
+    top: -10px;
+  }
+
+  nav .show:after {
+    top: 10px;
+  }
+
+  /* ======================= NAV  ITEM ======================= */
+  nav ul div li a {
+    font-size: 2rem;
+  }
+}
+
